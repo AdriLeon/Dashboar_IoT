@@ -1,12 +1,12 @@
 import web
 
 urls = (
-    '/', 'mvc.controllers.index.Index',
-    '/login', 'mvc.controllers.login.Login',
-    '/signup', 'mvc.controllers.signup.Signup',
-    '/inicio', 'mvc.controllers.inicio.Inicio',
-    '/logout', 'mvc.controllers.logout.Logout',
-    '/recuperar', 'mvc.controllers.recuperar.Recuperar',
+    '/', 'mvc.controllers.public.index.Index',
+    '/login', 'mvc.controllers.public.login.Login',
+    '/signup', 'mvc.controllers.public.signup.Signup',
+    '/inicio', 'mvc.controllers.user.inicio.Inicio',
+    '/logout', 'mvc.controllers.public.logout.Logout',
+    '/recuperar', 'mvc.controllers.public.recuperar.Recuperar',
 )
 
 app = web.application(urls, globals())
