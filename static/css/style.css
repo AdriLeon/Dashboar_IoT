@@ -1,5 +1,14 @@
 html {
     font-family: 'Spartan', sans-serif;
     display: inline-block;
-    text-align: center;
 }
+
+.link-white{
+    color: #fff;
+}
+
+#title{
+    font-size: 25px;
+    padding-right: 50px;
+}
+  
