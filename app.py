@@ -7,6 +7,9 @@ urls = (
     '/inicio', 'mvc.controllers.user.inicio.Inicio',
     '/logout', 'mvc.controllers.public.logout.Logout',
     '/recuperar', 'mvc.controllers.public.recuperar.Recuperar',
+    '/setup', 'mvc.controllers.user.setup.Setup',
+    '/about', 'mvc.controllers.public.about.About',
+    '/user_aboout', 'mvc.controllers.user.user_about.User_About',
 )
 
 app = web.application(urls, globals())
