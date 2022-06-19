@@ -5,7 +5,7 @@ urls = (
     '/login', 'mvc.controllers.public.login.Login',
     '/signup', 'mvc.controllers.public.signup.Signup',
     '/inicio', 'mvc.controllers.user.inicio.Inicio',
-    '/logout', 'mvc.controllers.public.logout.Logout',
+    '/logout', 'mvc.controllers.user.logout.Logout',
     '/recuperar', 'mvc.controllers.public.recuperar.Recuperar',
     '/setup', 'mvc.controllers.user.setup.Setup',
     '/about', 'mvc.controllers.public.about.About',
