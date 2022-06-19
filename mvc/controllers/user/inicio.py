@@ -16,10 +16,12 @@ class Inicio:
                 return web.seeother("/login")
             else:
                 firebase = pyrebase.initialize_app(token.firebaseConfig)
+                storage = firebase.storage()
                 db = firebase.database()
                 users = web.cookies().get('localId')
                 name = db.child("users").child(users).child("data_user").get()
+                url = storage.child("users").child(users).child("data_user/profile.jpg").get_url(users)
                 print(name.val()['name'])
-                return render.inicio(name)
+                return render.inicio(name, url)
         except Exception as error:
             print("Error Inicio.GET: {}".format(error))

@@ -14,7 +14,7 @@ class Signup:
             firebase = pyrebase.initialize_app(token.firebaseConfig)
             auth = firebase.auth()
             db = firebase.database()
-            #storage = firebase.storage()
+            storage = firebase.storage()
             formulario = web.input()
             name = formulario.name
             email = formulario.email
@@ -22,16 +22,17 @@ class Signup:
             status = 'Enable'
             user= auth.create_user_with_email_and_password(email, password)
             print(user['localId']) 
+            image = "static\images\image.jpg"
             data = {
                 "name": name,
                 "email": email,
                 "status": status
             }
             db.child("users").child(user['localId']).child("data_user").set(data)
-            #storage.child("users").child(user['localId']).child("data_user/profile.jpg").put("\static\images\image.jpg", user['idToken'])
+            storage.child("users").child(user['localId']).child("data_user/profile.jpg").put(image)
             web.setcookie('localId', user['localId'], 3600)
             print("localId: ", web.cookies().get('localId'))
-            return web.seeother("/login") 
+            return web.seeother("/inicio") 
         except Exception as error:
             format = json.loads(error.args[1])
             error = format['error']
