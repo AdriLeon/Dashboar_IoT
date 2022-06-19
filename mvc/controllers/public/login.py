@@ -30,7 +30,7 @@ class Login:
             print(user['localId'])
             web.setcookie('localId', user['localId'], 3600)
             print("localId: ", web.cookies().get('localId'))
-            results = db.child("users").child(user['localID']).child("data_user").get()
+            results = db.child("users").child(user['localId']).child("data_user").get()
             print(results.val())
             if results.val()['status'] == 'Enable':
                 return web.seeother("/inicio")
