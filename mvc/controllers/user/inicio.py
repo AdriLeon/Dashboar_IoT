@@ -34,15 +34,55 @@ class Inicio:
             widget = formulario.widget
             type = formulario.type
             if type == "humedad":
-                b = random.radint(10000000,20000000)
+                b = random.randint(10000000, 20000000)
                 wid = hex(b)
                 localId = web.cookies().get('localId')
                 data = {
                     "widget": widget,
-                    "temperatura": None,
-                    "humedad": None
+                    "temperatura": 0,
+                    "humedad": 0
                 }
-                db.child("users").child(localId).child("data_widget").child(wid).set(data)
+                db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
+                return web.seeother("/inicio")
+            elif type == "distancia":
+                b = random.randint(30000000, 40000000)
+                wid = hex(b)
+                localId = web.cookies().get('localId')
+                data= {
+                    "widget": widget,
+                    "distancia": 0
+                }
+                db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
+                return web.seeother("/inicio")
+            elif type == "velocidad":
+                b = random.randint(50000000, 60000000)
+                wid = hex(b)
+                localId = web.cookies().get('localId')
+                data = {
+                    "widget": widget,
+                    "velocidad": 0
+                }
+                db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
+                return web.seeother("/inicio")
+            elif type == "sonido":
+                b = random.randint(70000000, 80000000)
+                wid = hex(b)
+                localId = web.cookies().get('localId')
+                data = {
+                    "widget": widget,
+                    "sonido": 0
+                }
+                db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
+                return web.seeother("/inicio")
+            elif type == "power":
+                b = random.randint(90000000, 100000000)
+                wid = hex(b)
+                localId = web.cookies().get('localId')
+                data = {
+                    "widget": widget,
+                    "power": 0
+                }
+                db.child("users").child(localId).child("data_widget").child("controlador").child(type).child(wid).set(data)
                 return web.seeother("/inicio")
             else:
                 return web.seeother("/inicio")
