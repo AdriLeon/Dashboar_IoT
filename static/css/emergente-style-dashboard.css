@@ -1,0 +1,63 @@
+.btn-group {
+    padding: 5px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.btn-cancel {
+    color: #090909;
+    border-color: #ddd;
+}
+
+.btn-cancel:hover {
+    background-color: #e6e6e6;
+}
+
+.site-dialog {
+    overflow: hidden;
+    width: 95%;
+    max-width: 500px;
+    padding: 0;
+    border-width: 0;
+    border-radius: 15px;
+    background: #fff;
+    text-align: center;
+}
+
+.site-dialog h1 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    color: #fff;
+}
+
+.site-dialog p {
+    font-size: 14px;
+}
+
+.site-dialog .dialog-header {
+    padding: 12px 20px;
+    background-color: #434a54;
+}
+
+.site-dialog .dialog-content {
+    padding: 30px 20px;
+    color: #555;
+    background-color: #fff;
+}
+
+.site-dialog .dialog-content p:last-of-type,
+.site-dialog .dialog-content p:only-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*ESTILO DEL FORMULARIO DENTRO DE LA VENTANA*/
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+:disabled{
+    background-color: rgb(218, 247, 247) !important;
+}

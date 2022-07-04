@@ -58,3 +58,9 @@
   border-radius: 8px;
   margin-top: 20px;
 }
+
+/*ESTILO DEL FORMULARIO DENTRO DE LA VENTANA*/
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
