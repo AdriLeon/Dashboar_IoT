@@ -38,7 +38,7 @@ class Inicio:
                 wid = hex(b)
                 localId = web.cookies().get('localId')
                 data = {
-                    "widget": widget,
+                    "name": widget,
                     "temperatura": 0,
                     "humedad": 0
                 }
@@ -48,8 +48,8 @@ class Inicio:
                 b = random.randint(30000000, 40000000)
                 wid = hex(b)
                 localId = web.cookies().get('localId')
-                data= {
-                    "widget": widget,
+                data = {
+                    "name": widget,
                     "distancia": 0
                 }
                 db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
@@ -59,7 +59,7 @@ class Inicio:
                 wid = hex(b)
                 localId = web.cookies().get('localId')
                 data = {
-                    "widget": widget,
+                    "name": widget,
                     "velocidad": 0
                 }
                 db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
@@ -69,7 +69,7 @@ class Inicio:
                 wid = hex(b)
                 localId = web.cookies().get('localId')
                 data = {
-                    "widget": widget,
+                    "name": widget,
                     "sonido": 0
                 }
                 db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
@@ -79,7 +79,7 @@ class Inicio:
                 wid = hex(b)
                 localId = web.cookies().get('localId')
                 data = {
-                    "widget": widget,
+                    "name": widget,
                     "power": 0
                 }
                 db.child("users").child(localId).child("data_widget").child("controlador").child(type).child(wid).set(data)

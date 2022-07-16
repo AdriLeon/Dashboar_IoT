@@ -1,4 +1,4 @@
-$def with (name=None, url=None)
+$def with (name=None, url=None, control=None)
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +12,11 @@ $def with (name=None, url=None)
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/static/css/slidebar.css">
   <link rel="stylesheet" href="/static/css/emergente-style-dashboard.css">
+  <link rel="stylesheet" href="/static/css/tablas_widgets.css">
+  <script type="text/javascript" src="/static/js/get_humedad.js"></script>
+  <script type="text/javascript" src="/static/js/get_distancia.js"></script>
+  <script type="text/javascript" src="/static/js/get_velocidad.js"></script>
+  <script type="text/javascript" src="/static/js/get_sonido.js"></script>
   <title>Document</title>
 </head>
 
@@ -32,7 +37,7 @@ $def with (name=None, url=None)
             <img src="$url" alt="mdo" width="40" height="40" class="rounded-circle">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li class="dropdown-item">$name.val()['name']</li>
+            <li class="">$name.val()['name']</li>
             <li><a class="dropdown-item" href="/setup">Configuración</a></li>
             <li>
               <hr class="dropdown-divider">
@@ -46,7 +51,7 @@ $def with (name=None, url=None)
 
   <!--Collapsible-->
   <main class="d-flex flex-nowrap">
-    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 200px;">
       <div class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
         <img src="/static/images/widget-icon.png" width="15%" alt="">
         <span class="fs-5 fw-semibold">Widgets</span>
@@ -278,6 +283,96 @@ $def with (name=None, url=None)
         </li>
       </ul>
     </div>
+    <!--Seccion de tablas correspondientes a los widgets-->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Sensores de Humedad</h1>
+          <table id="table_humedad" class="table table-striped">
+            <thead id="thead_humedad">
+              <tr>
+                <th>Nombre</th>
+                <th>Temperatura</th>
+                <th>Humedad</th>
+                <th>Ruta de la Base de Datos</th>
+                <th>Borrar</th>
+              </tr>
+            </thead>
+            <tbody id="tbody_humedad">
+              <!-- Se agregarán una fila por cada item en el archivo json -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col">
+          <h1>Sensores de Distancia</h1>
+          <table id="table_distancia" class="table">
+            <thead id="thead_distancia">
+              <tr>
+                <th>Nombre</th>
+                <th>Distancia</th>
+                <th>Ruta de la Base de Datos</th>
+                <th>Borrar</th>
+              </tr>
+            </thead>
+            <tbody id="tbody_distancia">
+              <!-- Se agregarán una fila por cada item en el archivo json -->
+            </tbody>
+          </table>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+          <h1>Sensores de Velocidad</h1>
+          <table id="table_velocidad" class="table">
+            <thead id="thead_velocidad">
+              <tr>
+                <th>Nombre</th>
+                <th>Velocidad</th>
+                <th>Ruta de la Base de Datos</th>
+                <th>Borrar</th>
+              </tr>
+            </thead>
+            <tbody id="tbody_velocidad">
+              <!-- Se agregarán una fila por cada item en el archivo json -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col">
+          <h1>Sensores de Sonido</h1>
+          <table id="table_sonido" class="table">
+            <thead id="thead_sonido">
+              <tr>
+                <th>Nombre</th>
+                <th>Sonido</th>
+                <th>Ruta de la Base de Datos</th>
+                <th>Borrar</th>
+              </tr>
+            </thead>
+            <tbody id="tbody_sonido">
+              <!-- Se agregarán una fila por cada item en el archivo json -->
+            </tbody>
+          </table>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+          <h1>Controladores</h1>
+          <table class="table" id="table_boton">
+            <thead id="thead_boton">
+              <td>Nombre</td>
+              <td></td>
+            </thead>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><button></button></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+      
 
   </main>
 
@@ -288,7 +383,12 @@ $def with (name=None, url=None)
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
-
+  <script>
+    document.onload = getHumedad();
+    document.onload = getDistancia();
+    document.onload = getVelocidad();
+    document.onload = getSonido();
+  </script>
 </body>
 
 </html>

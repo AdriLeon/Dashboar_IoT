@@ -52,11 +52,11 @@
   margin-bottom: 0;
 }
 
-.valid-password{
-  border-color: #000;
-  width: 85%;
+.valid-control{
+  width: 100%;
   border-radius: 8px;
   margin-top: 20px;
+  min-height: 2.125rem;
 }
 
 /*ESTILO DEL FORMULARIO DENTRO DE LA VENTANA*/

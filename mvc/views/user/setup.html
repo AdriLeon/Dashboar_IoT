@@ -18,10 +18,10 @@ $def with(user=None, localId=None, url=None)
   <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a id="title" class="nav-link text-white" href="#"><img src="/static/images/IoThing_white.png"
+        <a id="title" class="nav-link text-white" href="/inicio"><img src="/static/images/IoThing_white.png"
             width="50px">IoThing</a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white">Inicio</a></li>
+          <li><a href="/inicio" class="nav-link px-2 text-white">Inicio</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
         </ul>
 
@@ -88,27 +88,29 @@ $def with(user=None, localId=None, url=None)
         <div class="dialog-content">
           <p>Estás a punto de suspender tu cuenta. Esta acción es irreversible. Si desea reactivar su cuenta sera
             necesario
-            que se contacte con soporte. ¿Estás seguro de que quieres continuar? Por favor, introduzca su contraseña.
+            que se contacte con soporte. ¿Estás seguro de que quieres continuar? Por favor, introduzca su correo para confirmar.
           </p>
-          <input type="password" name="password" id="password" class="valid-password">
-        </div>
-        <div class="btn-group">
-          <form action="" method="POST">
-            <button type="submit" class="btn btn-danger" id="delete">Suspender</button>
-            <button class="btn btn-cancel" id="cancel">Cancelar</button>
+          <form action="form-signin" method="POST">
+            <div class="form-label-group input-group">
+              <input type="email" class="valid-control"  placeholder="Email">
+            </div>
+            <div class="btn-group">
+              <button type="submit" class="btn btn-danger" id="delete">Suspender</button>
+              <button type="button" class="btn btn-cancel" id="cancel">Cancelar</button>
+            </div>
           </form>
         </div>
       </dialog>
     </div>
-  </div>
 
 
-  <script src="/static/js/upload_image.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="/static/js/emergente.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+
+    <script src="/static/js/upload_image.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="/static/js/emergente.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
 
 </body>
 
