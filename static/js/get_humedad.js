@@ -1,5 +1,3 @@
-
-
 function getHumedad() {
     // Establece la ruta del archivo JSON
     var firebase = "https://iotplatform-11dca-default-rtdb.firebaseio.com/users/";
