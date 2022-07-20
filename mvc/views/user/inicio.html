@@ -13,6 +13,7 @@ $def with (name=None, url=None, control=None)
   <link rel="stylesheet" href="/static/css/slidebar.css">
   <link rel="stylesheet" href="/static/css/emergente-style-dashboard.css">
   <link rel="stylesheet" href="/static/css/tablas_widgets.css">
+  <script type="text/javascript" src="/static/js/get_temperature.js"></script>
   <script type="text/javascript" src="/static/js/get_humedad.js"></script>
   <script type="text/javascript" src="/static/js/get_distancia.js"></script>
   <script type="text/javascript" src="/static/js/get_velocidad.js"></script>
@@ -287,15 +288,29 @@ $def with (name=None, url=None, control=None)
     <div class="container_tables">
       <div class="row">
         <div class="col">
+          <h1>Sensores de Temperatura</h1>
+          <table id="table_temperatura" class="table table-striped">
+            <thead id="thead_temp">
+              <tr>
+                <th>Nombre</th>
+                <th>Temperatura</th>
+                <th>Ruta de la Base de Datos</th>
+              </tr>
+            </thead>
+            <tbody id="tbody_temperatura">
+              <!-- Se agregarán una fila por cada item en el archivo json -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col">
           <h1>Sensores de Humedad</h1>
           <table id="table_humedad" class="table table-striped">
             <thead id="thead_humedad">
               <tr>
                 <th>Nombre</th>
-                <th>Temperatura</th>
                 <th>Humedad</th>
                 <th>Ruta de la Base de Datos</th>
-                <th>Borrar</th>
               </tr>
             </thead>
             <tbody id="tbody_humedad">
@@ -304,15 +319,16 @@ $def with (name=None, url=None, control=None)
           </table>
         </div>
 
+        <div class="w-100"></div>
+
         <div class="col">
           <h1>Sensores de Distancia</h1>
-          <table id="table_distancia" class="table">
+          <table id="table_distancia" class="table table-striped">
             <thead id="thead_distancia">
               <tr>
                 <th>Nombre</th>
                 <th>Distancia</th>
                 <th>Ruta de la Base de Datos</th>
-                <th>Borrar</th>
               </tr>
             </thead>
             <tbody id="tbody_distancia">
@@ -320,16 +336,15 @@ $def with (name=None, url=None, control=None)
             </tbody>
           </table>
         </div>
-        <div class="w-100"></div>
+        
         <div class="col">
           <h1>Sensores de Velocidad</h1>
-          <table id="table_velocidad" class="table">
+          <table id="table_velocidad" class="table table-striped">
             <thead id="thead_velocidad">
               <tr>
                 <th>Nombre</th>
                 <th>Velocidad</th>
                 <th>Ruta de la Base de Datos</th>
-                <th>Borrar</th>
               </tr>
             </thead>
             <tbody id="tbody_velocidad">
@@ -338,15 +353,16 @@ $def with (name=None, url=None, control=None)
           </table>
         </div>
 
+        <div class="w-100"></div>
+
         <div class="col">
           <h1>Sensores de Sonido</h1>
-          <table id="table_sonido" class="table">
+          <table id="table_sonido" class="table table-striped">
             <thead id="thead_sonido">
               <tr>
                 <th>Nombre</th>
                 <th>Sonido</th>
                 <th>Ruta de la Base de Datos</th>
-                <th>Borrar</th>
               </tr>
             </thead>
             <tbody id="tbody_sonido">
@@ -357,16 +373,15 @@ $def with (name=None, url=None, control=None)
         <div class="w-100"></div>
         <div class="col">
           <h1>Controladores</h1>
-          <table class="table" id="table_boton">
+          <table class="table table-striped" id="table_boton">
             <thead id="thead_boton">
               <td>Nombre</td>
-              <td></td>
             </thead>
             <!--Ciclo for aqui-->
             <tr>
               <td></td>
               <td></td>
-              <td><button></button></td>
+              <td><button type="submit" class="btn btn-danger">Borrar</button></td>
             </tr>
           </table>
         </div>
@@ -385,6 +400,7 @@ $def with (name=None, url=None, control=None)
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
   <script>
+    document.onload = getTemperatura();
     document.onload = getHumedad();
     document.onload = getDistancia();
     document.onload = getVelocidad();

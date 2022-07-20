@@ -17,10 +17,9 @@ function getDistancia() {
                     var input_dist = document.createElement("input");
                     var td_ruta = document.createElement("td");
                     var td_button = document.createElement("td");
-                    var dist = "dist"+key;
 
                     input_dist.type = "number";
-                    input_dist.id = dist;
+                    input_dist.id = key;
                     input_dist.readOnly = true;
                     input_dist.disabled = true;
                     td_sensor.innerHTML = json.data[key].name;
@@ -34,7 +33,7 @@ function getDistancia() {
                     tr.appendChild(td_button);
                     tbody.appendChild(tr);
 
-                    document.getElementById(dist).value = json.data[key].distancia;
+                    document.getElementById(key).value = json.data[key].distancia;
                 }
             } else {
                 s = json.path.split("/");

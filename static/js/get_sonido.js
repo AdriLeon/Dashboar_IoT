@@ -17,10 +17,9 @@ function getSonido() {
                     var input_sonido = document.createElement("input");
                     var td_ruta = document.createElement("td");
                     var td_button = document.createElement("td");
-                    var sonido = "sonido"+key;
 
                     input_sonido.type = "number";
-                    input_sonido.id = sonido;
+                    input_sonido.id = key;
                     input_sonido.readOnly = true;
                     input_sonido.disabled = true;
                     td_sensor.innerHTML = json.data[key].name;
@@ -34,7 +33,7 @@ function getSonido() {
                     tr.appendChild(td_button);
                     tbody.appendChild(tr);
 
-                    document.getElementById(sonido).value = json.data[key].sonido;
+                    document.getElementById(key).value = json.data[key].sonido;
                 }
             } else {
                 s = json.path.split("/");

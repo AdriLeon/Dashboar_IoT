@@ -34,15 +34,21 @@ class Inicio:
             widget = formulario.widget
             type = formulario.type
             if type == "humedad":
-                b = random.randint(10000000, 20000000)
-                wid = hex(b)
+                b = random.randint(10000000, 19999999)
+                c = random.randint(20000000, 29999999)
+                widt = hex(b)
+                widhm = hex(c)
                 localId = web.cookies().get('localId')
-                data = {
+                datat = {
                     "name": widget,
-                    "temperatura": 0,
+                    "temperatura": 0
+                }
+                datah = {
+                    "name": widget,
                     "humedad": 0
                 }
-                db.child("users").child(localId).child("data_widget").child("sensor").child(type).child(wid).set(data)
+                db.child("users").child(localId).child("data_widget").child("sensor").child(type).child("temperatura").child(widt).set(datat)
+                db.child("users").child(localId).child("data_widget").child("sensor").child(type).child("humedad").child(widhm).set(datah)
                 return web.seeother("/inicio")
             elif type == "distancia":
                 b = random.randint(30000000, 40000000)

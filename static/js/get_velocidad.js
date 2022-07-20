@@ -17,10 +17,9 @@ function getVelocidad() {
                     var input_veloc = document.createElement("input");
                     var td_ruta = document.createElement("td");
                     var td_button = document.createElement("td");
-                    var veloc = "veloc"+key;
 
                     input_veloc.type = "number";
-                    input_veloc.id = veloc;
+                    input_veloc.id = key;
                     input_veloc.readOnly = true;
                     input_veloc.disabled = true;
                     td_sensor.innerHTML = json.data[key].name;
@@ -34,7 +33,7 @@ function getVelocidad() {
                     tr.appendChild(td_button);
                     tbody.appendChild(tr);
 
-                    document.getElementById(veloc).value = json.data[key].velocidad;
+                    document.getElementById(key).value = json.data[key].velocidad;
                 }
             } else {
                 s = json.path.split("/");
