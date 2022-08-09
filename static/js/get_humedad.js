@@ -24,7 +24,7 @@ function getHumedad() {
                     input_hum.disabled = true;
                     td_ruta.innerHTML = "/"+key+"/humedad";
                     td_sensor.innerHTML = json.data[key].name;
-                    td_button.innerHTML = '<button class="btn btn-danger" id="'+key+'" type="button">Borrar</button>';
+                    td_button.innerHTML = '<button class="btn btn-danger" id="humedad/humedad/'+key+'" type="button" onclick="reply_click(this.id)">Borrar</button>';
 
                     td_hum.appendChild(input_hum);
                     tr.appendChild(td_sensor);

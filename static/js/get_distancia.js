@@ -24,7 +24,7 @@ function getDistancia() {
                     input_dist.disabled = true;
                     td_sensor.innerHTML = json.data[key].name;
                     td_ruta.innerHTML = "/"+key+"/distancia";
-                    td_button.innerHTML = '<button class="btn btn-danger" type="button">Borrar</button>';
+                    td_button.innerHTML = '<button class="btn btn-danger" id="distancia/'+key+'" type="button" onclick="reply_click(this.id)">Borrar</button>';
 
                     td_dist.appendChild(input_dist);
                     tr.appendChild(td_sensor);
