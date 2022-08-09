@@ -15,7 +15,7 @@ function reply_click(clicked_id) {
       const text = this.responseText;
       console.log(text);
       console.log(data);
-
+      location.reload()
     }
 
     request.open("DELETE", url);
