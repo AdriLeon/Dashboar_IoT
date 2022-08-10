@@ -22,8 +22,10 @@ class Inicio:
                 users = web.cookies().get('localId')
                 name = db.child("users").child(users).child("data_user").get()
                 url = storage.child("users").child(users).child("data_user/profile.jpg").get_url(users)
+                control = db.child("users").child(users).child("data_widget").child("controlador").child("power").get()
                 print(name.val()['name'])
-                return render.inicio(name, url)
+                print(control.val()['name'])
+                return render.inicio(name, url, control)
         except Exception as error:
             print("Error Inicio.GET: {}".format(error))
     def POST(self):
@@ -86,7 +88,8 @@ class Inicio:
                 localId = web.cookies().get('localId')
                 data = {
                     "name": widget,
-                    "power": 0
+                    "value": 0,
+                    "power": "Apagado"
                 }
                 db.child("users").child(localId).child("data_widget").child("controlador").child(type).child(wid).set(data)
                 return web.seeother("/inicio")

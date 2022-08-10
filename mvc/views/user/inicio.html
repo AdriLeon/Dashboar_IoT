@@ -378,11 +378,12 @@ $def with (name=None, url=None, control=None)
               <td>Nombre</td>
             </thead>
             <!--Ciclo for aqui-->
-            <tr>
-              <td></td>
-              <td></td>
-              <td><button type="submit" class="btn btn-danger">Borrar</button></td>
-            </tr>
+            $for controll in control:
+                <tr>
+                  <td>$controll.val().get("name")</td>
+                  <td><a href="/power_button/$controll.key()" class="btn btn-success">$controll.val().get("power")</a></td>
+                  <td><a href="/delete_data/$controll.key()" class="btn btn-danger">Borrar</a></td>
+                </tr>
           </table>
         </div>
 

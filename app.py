@@ -9,7 +9,10 @@ urls = (
     '/recuperar', 'mvc.controllers.public.recuperar.Recuperar',
     '/setup', 'mvc.controllers.user.setup.Setup',
     '/about', 'mvc.controllers.public.about.About',
-    '/user_aboout', 'mvc.controllers.user.user_about.User_About',
+    '/user_about', 'mvc.controllers.user.user_about.User_About',
+    '/power_button/(.*)', 'mvc.controllers.user.power_button.Power_Button',
+    '/delete_data/(.*)', 'mvc.controllers.user.delete_data.Delete_Data',
+    '/suspender', 'mvc.controllers.user.suspender.Suspender'
 )
 
 app = web.application(urls, globals())
