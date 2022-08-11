@@ -24,7 +24,7 @@ function getSonido() {
                     input_sonido.disabled = true;
                     td_sensor.innerHTML = json.data[key].name;
                     td_ruta.innerHTML = "/"+key+"/sonido";
-                    td_button.innerHTML = '<button class="btn btn-danger" id="sonido/'+key+'" type="button" onclick="reply_click(this.id)">Borrar</button>';
+                    td_button.innerHTML = '<button class="btn btn-danger" id="sensor/sonido/'+key+'" type="button" onclick="reply_click(this.id)">Borrar</button>';
 
                     td_sonido.appendChild(input_sonido);
                     tr.appendChild(td_sensor);

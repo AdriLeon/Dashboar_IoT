@@ -17,7 +17,8 @@ $def with (name=None, url=None, control=None)
   <script type="text/javascript" src="/static/js/get_humedad.js"></script>
   <script type="text/javascript" src="/static/js/get_distancia.js"></script>
   <script type="text/javascript" src="/static/js/get_velocidad.js"></script>
-  <script type="text/javascript" src="/static/js/get_sonido.js"></script>
+  <!-- <script type="text/javascript" src="/static/js/get_sonido.js"></script> -->
+  <script type="text/javascript" src="/static/js/get_controlador.js"></script>
   <title>Document</title>
 </head>
 
@@ -197,11 +198,11 @@ $def with (name=None, url=None, control=None)
                   </dialog>
                 </div>
               </li>
-              <li>
+              <!-- <li>
                 <div>
                   <button class="btn btn-sm  rounded" id="sound-button">Sensor de Sonido</button>
 
-                  <!--Ventana emergente-->
+                  
                   <dialog id="sound-emergent" class="site-dialog">
                     <header class="dialog-header">
                       <h1>Sensor de Sonido</h1>
@@ -235,7 +236,7 @@ $def with (name=None, url=None, control=None)
                     </div>
                   </dialog>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </li>
@@ -355,7 +356,7 @@ $def with (name=None, url=None, control=None)
 
         <div class="w-100"></div>
 
-        <div class="col">
+        <!-- <div class="col">
           <h1>Sensores de Sonido</h1>
           <table id="table_sonido" class="table table-striped">
             <thead id="thead_sonido">
@@ -366,24 +367,24 @@ $def with (name=None, url=None, control=None)
               </tr>
             </thead>
             <tbody id="tbody_sonido">
-              <!-- Se agregarán una fila por cada item en el archivo json -->
+              
             </tbody>
           </table>
-        </div>
+        </div> -->
         <div class="w-100"></div>
         <div class="col">
           <h1>Controladores</h1>
           <table class="table table-striped" id="table_boton">
             <thead id="thead_boton">
-              <td>Nombre</td>
+              <tr>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Ruta de la Base de Datos</th>
+              </tr>
             </thead>
-            <!--Ciclo for aqui-->
-            $for controll in control:
-                <tr>
-                  <td>$controll.val().get("name")</td>
-                  <td><a href="/power_button/$controll.key()" class="btn btn-success">$controll.val().get("power")</a></td>
-                  <td><a href="/delete_data/$controll.key()" class="btn btn-danger">Borrar</a></td>
-                </tr>
+            <tbody id="tbody_controlador">
+              <!-- Se agregarán una fila por cada item en el archivo json -->
+            </tbody>
           </table>
         </div>
 
@@ -405,9 +406,13 @@ $def with (name=None, url=None, control=None)
     document.onload = getHumedad();
     document.onload = getDistancia();
     document.onload = getVelocidad();
-    document.onload = getSonido();
+    // document.onload = getSonido();
+    document.onload = getControlador();
   </script>
   <script src="/static/js/delete_button.js"></script>
+  <script src="/static/js/delete_controller.js"></script>
+  <script src="/static/js/power_on.js"></script>
+  <script src="/static/js/power_off.js"></script>
 </body>
 
 </html>

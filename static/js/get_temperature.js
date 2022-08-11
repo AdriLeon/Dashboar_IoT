@@ -24,7 +24,7 @@ function getTemperatura() {
                     input_temp.disabled = true;
                     td_ruta.innerHTML = "/"+key+"/temperatura";
                     td_sensor.innerHTML = json.data[key].name;
-                    td_button.innerHTML = '<button class="btn btn-danger" id="humedad/temperatura/'+key+'" type="button" onclick="reply_click(this.id)">Borrar</button>';
+                    td_button.innerHTML = '<button class="btn btn-danger" id="sensor/humedad/temperatura/'+key+'" type="button" onclick="reply_click(this.id)">Borrar</button>';
 
                     td_temp.appendChild(input_temp);
                     tr.appendChild(td_sensor);
