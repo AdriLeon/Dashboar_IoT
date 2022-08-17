@@ -12,3 +12,12 @@ html {
     padding-right: 50px;
 }
  
+img.d-block{
+    height: 566px;
+    width: 1366px;
+}
+
+div.carousel-caption h1, h4{
+    -webkit-text-stroke: 1px black;
+  color: #fff;
+}
